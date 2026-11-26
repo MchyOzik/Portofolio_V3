@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Work - Portfolio M. Choirul Rozikin</title>
+  <meta name="description" content="Learning modules written by M. Choirul Rozikin: MikroTik MTCNA, Debian 12, Cisco CCNA, and more.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="work.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body class="page-work">
+
+  <canvas id="galaxy"></canvas>
+  <div class="wk-nebula"></div>
+  <div class="wk-vignette"></div>
+
+  <header>
+    <nav>
+      <div class="brand">@Mchy<span>Ozik</span></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="experience.html">Skills</a></li>
+        <li><a href="work.html">My Work</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="games.html">Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Titik navigasi kanan (dibuat work.js) -->
+  <nav class="wk-dots" id="wkDots" aria-label="Book navigation"></nav>
+
+  <main class="wk-wrap">
+
+    <!-- TAHAP 1: rak buku -->
+    <section class="wk-hero" id="shelf">
+      <div class="wk-eyebrow" id="wkEyebrow"></div>
+      <div class="wk-shelf" id="wkShelf"></div>
+
+      <a class="wk-scroll" id="wkScroll" href="#book-1">
+        <span>SCROLL DOWN FOR DETAILS</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- TAHAP 2: detail + deskripsi (muncul saat di-scroll) -->
+    <section class="wk-details" id="wkDetails"></section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 MchyOzik — All Rights Reserved</p>
+      <div class="social-links">
+        <a href="https://wa.me/6285790201784" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/mchyozikk/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@MchyOzik17" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://github.com/MchyOzik/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="galaxy.js"></script>
+  <script src="work.js"></script>
+</body>
+</html>

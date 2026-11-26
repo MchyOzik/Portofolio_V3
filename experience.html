@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills - Portfolio M. Choirul Rozikin</title>
+  <meta name="description" content="Technical skills and experience of M. Choirul Rozikin: networking (MTCNA, CCNA), cyber security, system administration, and cloud computing.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="experience.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body class="page-skills">
+
+  <canvas id="galaxy"></canvas>
+  <div class="sk-nebula"></div>
+  <div class="sk-vignette"></div>
+
+  <header>
+    <nav>
+      <div class="brand">@Mchy<span>Ozik</span></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="experience.html">Skills</a></li>
+        <li><a href="work.html">My Work</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="games.html">Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="sk-wrap">
+
+    <!-- ================= SKILLS ================= -->
+    <section>
+
+      <div class="sk-filter" id="skFilter">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="net">Networking</button>
+        <button data-filter="cyber">Cyber Security</button>
+        <button data-filter="sys">SysAdmin</button>
+        <button data-filter="cloud">Cloud</button>
+        <button data-filter="tools">Tools</button>
+      </div>
+
+      <div class="sk-grid">
+
+        <div class="sk-card" data-cat="net">
+          <div class="sk-label"><i class="fa-solid fa-network-wired"></i> NETWORKING // MTCNA</div>
+          <ul>
+            <li>Routing (Static &amp; Dynamic Routing)</li>
+            <li>TCP/IP &amp; Subnetting</li>
+            <li>Router Gateway</li>
+            <li>DHCP, DNS &amp; NAT</li>
+            <li>Firewall Configuration</li>
+            <li>Wireless &amp; Hotspot</li>
+            <li>VPN &amp; Tunneling</li>
+            <li>VLAN</li>
+            <li>Bandwidth Management</li>
+            <li>QoS (Quality of Service)</li>
+            <li>Load Balance</li>
+            <li>Failover</li>
+            <li>Port Knocking</li>
+          </ul>
+        </div>
+
+        <div class="sk-card" data-cat="net">
+          <div class="sk-label"><i class="fa-solid fa-diagram-project"></i> NETWORKING // CCNA</div>
+          <ul>
+            <li>Switching &amp; Management (VLAN, Trunking, STP)</li>
+            <li>Routing &amp; Management (Static, Dynamic Routing)</li>
+            <li>Access Control List (ACL)</li>
+            <li>FHRP - HSRP/VRRP</li>
+            <li>NAT</li>
+            <li>Port Security</li>
+          </ul>
+        </div>
+
+        <div class="sk-card" data-cat="net">
+          <div class="sk-label"><i class="fa-solid fa-ethernet"></i> CABLING + FO</div>
+          <ul>
+            <li>UTP</li>
+            <li>Fiber Optic</li>
+            <li>Splicing</li>
+            <li>Configuration ONT and OLT</li>
+          </ul>
+        </div>
+
+        <div class="sk-card" data-cat="cyber">
+          <div class="sk-label"><i class="fa-solid fa-magnifying-glass"></i> CYBERSECURITY // FORENSIC DIGITAL</div>
+          <ul>
+            <li>Digital Evidence Identification &amp; Collection</li>
+            <li>Disk Imaging &amp; Data Acquisition</li>
+            <li>File System Analysis</li>
+            <li>Metadata Analysis</li>
+            <li>Basic Log Analysis</li>
+            <li>Forensic Tools Usage (Autopsy, FTK Imager, Wireshark)</li>
+          </ul>
+        </div>
+
+        <div class="sk-card" data-cat="cyber">
+          <div class="sk-label"><i class="fa-solid fa-bug"></i> CYBERSECURITY // WEB EXPLOIT</div>
+          <ul>
+            <li>VA &amp; Pentest</li>
+            <li>SQL Injection (SQLi)</li>
+            <li>Cross-Site Scripting (XSS)</li>
+          </ul>
+        </div>
+
+        <div class="sk-card" data-cat="cyber">
+          <div class="sk-label"><i class="fa-solid fa-key"></i> CYBERSECURITY // CRYPTOGRAPHY</div>
+          <ul>
+            <li>Encryption &amp; Decryption</li>
+            <li>Asymmetric Cryptography (RSA)</li>
+            <li>Hashing Algorithm (MD5, SHA-256)</li>
+          </ul>
+        </div>
+
+        <div class="sk-card" data-cat="sys">
+          <div class="sk-label"><i class="fa-brands fa-linux"></i> SYSADMIN</div>
+          <ul>
+            <li>Linux Server Administration (Debian/Ubuntu)</li>
+            <li>User &amp; Permission Management (Linux)</li>
+            <li>Web Server Configuration (Apache/Nginx)</li>
+            <li>Network Service Configuration (DHCP, DNS, FTP)</li>
+            <li>Virtualization (VirtualBox/VMware)</li>
+            <li>Backup &amp; Recovery Management</li>
+          </ul>
+        </div>
+
+        <div class="sk-card" data-cat="cloud">
+          <div class="sk-label"><i class="fa-brands fa-aws"></i> CLOUD COMPUTING // AWS</div>
+          <ul>
+            <li>Docker &amp; Containerization</li>
+            <li>Docker Compose</li>
+            <li>CI/CD (GitHub Actions)</li>
+            <li>Serverless Architecture (AWS Lambda)</li>
+            <li>API Integration (REST API)</li>
+            <li>Deployment Amplify</li>
+          </ul>
+        </div>
+
+        <div class="sk-card" data-cat="tools">
+          <div class="sk-label"><i class="fa-solid fa-screwdriver-wrench"></i> TOOLS &amp; TECHNOLOGIES</div>
+          <ul>
+            <li>Cisco Packet Tracer, PNETLab, MikroTik Winbox, Wireshark, GNS3</li>
+            <li>Linux, VirtualBox, VMware, Kali Linux, Metasploit, Nmap</li>
+            <li>Git, GitHub, VS Code</li>
+            <li>AI (ChatGPT, Gemini, Claude, etc.)</li>
+            <li>Microsoft Office (Word, Excel, PowerPoint), Canva</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="ex-section">
+      <h1 class="sk-title">Experience</h1>
+
+      <div class="ex-list">
+
+        <!-- Pre-Internship -->
+        <article class="ex-card">
+          <div class="ex-info">
+            <div class="sk-label"><i class="fa-solid fa-briefcase"></i> PRE_INTERNSHIP.log</div>
+            <h2 class="ex-company">PT GAYATRI</h2>
+            <div class="ex-meta">
+              <span class="ex-chip"><i class="fa-regular fa-calendar"></i> 1 – 18 April 2026</span>
+              <span class="ex-chip red">Pre-Internship</span>
+            </div>
+            <ul class="ex-points">
+              <li>Assisted in WiFi installation, network cabling, and basic network configuration at customer locations.</li>
+              <li>Conducted site surveys, cable installation, and network connectivity checks.</li>
+              <li>Assisted technicians in configuring and troubleshooting modems and network issues.</li>
+              <li>Performed cable inspection, repair, and network maintenance activities.</li>
+              <li>Collaborated with field teams to ensure smooth network installation and troubleshooting processes.</li>
+            </ul>
+          </div>
+          <div class="ex-map">
+            <!-- GANTI src dengan alamat tepat perusahaan: Google Maps > Share > Embed a map > copy isi src="..." -->
+            <iframe
+              src="https://maps.google.com/maps?q=PT+Gayatri+Blitar&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen title="Location of PT GAYATRI"></iframe>
+            <div class="ex-map-tag"><i class="fa-solid fa-location-dot"></i> PT GAYATRI</div>
+          </div>
+        </article>
+
+        <!-- Organization -->
+        <article class="ex-card">
+          <div class="ex-info">
+            <div class="sk-label"><i class="fa-solid fa-users"></i> ORGANIZATION.log</div>
+            <h2 class="ex-company">Community IT SMKN 1 Nglegok</h2>
+            <div class="ex-meta">
+              <span class="ex-chip"><i class="fa-regular fa-calendar"></i> 2024 – Now</span>
+              <span class="ex-chip red">Deputy of Human Resource</span>
+            </div>
+            <ul class="ex-points">
+              <li>Served as Deputy of the Human Resource Division, managing members and supporting technical competency development through community programs.</li>
+              <li>Coordinated with members in implementing work programs and community activities for effective execution.</li>
+              <li>Participated in planning, implementing, and evaluating activities to improve technical skills and teamwork.</li>
+              <li>Supported communication and collaboration among members to create an active and productive learning environment.</li>
+            </ul>
+          </div>
+          <div class="ex-map">
+            <iframe
+              src="https://maps.google.com/maps?q=SMKN+1+Nglegok,+Blitar&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen title="Location of SMKN 1 Nglegok"></iframe>
+            <div class="ex-map-tag"><i class="fa-solid fa-location-dot"></i> SMKN 1 Nglegok</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 MchyOzik — All Rights Reserved</p>
+      <div class="social-links">
+        <a href="https://wa.me/6285790201784" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/mchyozikk/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@MchyOzik17" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://github.com/MchyOzik/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="galaxy.js"></script>
+  <script src="reveal.js"></script>
+  <script src="skills.js"></script>
+</body>
+</html>

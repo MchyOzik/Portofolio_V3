@@ -1,0 +1,197 @@
+.page-home { background: #000; position: relative; }
+
+#galaxy {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+
+/* Kabut merah gelap tipis + vignette */
+.gx-nebula {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 105%, rgba(150, 0, 20, .28), transparent 55%),
+    radial-gradient(ellipse at 15% 20%, rgba(255, 255, 255, .05), transparent 50%),
+    radial-gradient(ellipse at 85% 30%, rgba(120, 0, 15, .12), transparent 50%);
+}
+.gx-vignette {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, .85) 100%);
+}
+
+/* Layout utama: padding atas = tinggi navbar, padding bawah = tinggi footer,
+   jadi konten pas di tengah area yang kelihatan */
+.gx-hero {
+  position: relative; z-index: 1;
+  min-height: calc(100vh - 150px);
+  padding: 100px 5% 40px;
+  display: grid;
+  grid-template-columns: 290px 1fr 270px;
+  gap: 28px;
+  align-items: center;
+  max-width: 1400px; margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Glass card hitam (lebih ringkas) */
+.gx-card {
+  background: rgba(8, 8, 8, .7);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 14px;
+  padding: 16px 18px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .7), inset 0 0 0 1px rgba(255, 0, 40, .04);
+  color: #bdbdbd;
+  font-size: 13px;
+  line-height: 1.5;
+  align-self: center;
+  transform: translateY(-14px);
+}
+.gx-card h3 {
+  margin: 12px 0 6px; font-size: 11px; letter-spacing: 2px;
+  color: #e53935; font-family: "Courier New", monospace;
+}
+.gx-card p { margin: 3px 0; }
+.gx-card strong { color: #fff; }
+.gx-red { color: #ff3b3b; }
+.gx-title {
+  display: flex; align-items: center; gap: 8px;
+  font-family: "Courier New", monospace; font-size: 11px; letter-spacing: 2px; color: #9a9a9a;
+}
+.gx-dot {
+  width: 9px; height: 9px; border-radius: 50%; background: #ff1f3d;
+  box-shadow: 0 0 10px #ff1f3d, 0 0 20px rgba(255, 31, 61, .6);
+  animation: gxPulse 1.6s infinite;
+}
+@keyframes gxPulse { 50% { opacity: .3; transform: scale(.75); } }
+
+/* Telemetry */
+.gx-bar-label { display: flex; justify-content: space-between; font-size: 11px; margin-top: 8px; }
+.gx-bar-bg { height: 5px; background: rgba(255, 255, 255, .08); border-radius: 6px; overflow: hidden; margin-top: 3px; }
+.gx-bar-fill {
+  height: 100%; width: 40%; border-radius: 6px;
+  background: linear-gradient(90deg, #6b6b6b, #ffffff);
+  box-shadow: 0 0 8px rgba(255, 255, 255, .5);
+  transition: width 1s ease;
+}
+.gx-bar-fill.gx-bar-red {
+  background: linear-gradient(90deg, #7a0010, #ff1f3d);
+  box-shadow: 0 0 8px rgba(255, 31, 61, .7);
+}
+.gx-logs {
+  margin-top: 12px; padding: 8px 10px; height: 82px; overflow: hidden;
+  background: rgba(0, 0, 0, .7); border: 1px solid rgba(255, 255, 255, .06); border-radius: 8px;
+  font-family: "Courier New", monospace; font-size: 10.5px; color: #d6d6d6;
+}
+
+/* Teks tengah */
+.gx-text { text-align: center; align-self: center; }
+.gx-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+.gx-badge {
+  font-family: "Courier New", monospace; font-size: 11px; letter-spacing: 2px;
+  padding: 6px 12px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .14); color: #b5b5b5;
+}
+.gx-badge-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #ff1f3d;
+  box-shadow: 0 0 8px #ff1f3d; animation: gxPulse 1.6s infinite;
+}
+
+/* NAMA: putih menyala + aura merah seram */
+.gx-text h1 {
+  margin: 0;
+  font-family: "Cormorant SC", "Cinzel", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4.8vw, 72px);
+  line-height: 1.02;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, .95),
+    0 0 18px rgba(255, 255, 255, .7),
+    0 0 40px rgba(255, 255, 255, .35),
+    0 0 80px rgba(255, 20, 50, .45),
+    0 0 140px rgba(200, 0, 30, .35);
+  animation: gxFlicker 6s infinite;
+}
+@keyframes gxFlicker {
+  0%, 100% { opacity: 1; }
+  91% { opacity: 1; }
+  92% { opacity: .78; }
+  93% { opacity: 1; }
+  95% { opacity: .85; }
+  96% { opacity: 1; }
+}
+.gx-role {
+  margin: 12px auto 0; max-width: 620px;
+  font-size: clamp(13px, 1.4vw, 16px); color: #a8a8a8; letter-spacing: 1.5px; line-height: 1.5;
+}
+.gx-text h2 {
+  margin: 16px 0 4px; font-size: 13px; letter-spacing: 7px; color: #ff3b3b;
+  font-family: "Courier New", monospace; font-weight: 400;
+  text-shadow: 0 0 10px rgba(255, 31, 61, .7);
+}
+.gx-type { min-height: 28px; font-size: clamp(15px, 1.8vw, 20px); color: #f2f2f2; font-family: "Courier New", monospace; }
+.gx-cursor {
+  display: inline-block; width: 10px; height: 1.1em; background: #ff1f3d;
+  box-shadow: 0 0 10px #ff1f3d;
+  vertical-align: -3px; margin-left: 3px; animation: gxBlink 1s steps(1) infinite;
+}
+@keyframes gxBlink { 50% { opacity: 0; } }
+
+.gx-actions { margin-top: 20px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.gx-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px; border-radius: 10px; text-decoration: none;
+  font-weight: 600; font-size: 14px; transition: transform .2s, box-shadow .2s, background .2s;
+}
+.gx-btn:hover { transform: translateY(-2px); }
+.gx-btn.primary {
+  background: #fff; color: #000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, .45), 0 0 40px rgba(255, 20, 50, .25);
+}
+.gx-btn.primary:hover { box-shadow: 0 0 28px rgba(255, 255, 255, .7), 0 0 60px rgba(255, 20, 50, .45); }
+.gx-btn.ghost { background: rgba(0, 0, 0, .5); color: #e5e5e5; border: 1px solid rgba(255, 255, 255, .25); }
+.gx-btn.ghost:hover { border-color: #ff1f3d; color: #fff; }
+.gx-sign { margin-top: 16px; font-style: italic; color: #777; font-size: 13px; }
+
+/* Foto: hitam putih + cincin putih/merah (dinaikkan sedikit) */
+.gx-photo { display: flex; justify-content: center; align-self: center; transform: translateY(-34px); }
+.gx-photo-ring {
+  position: relative; width: 240px; height: 240px; border-radius: 50%; padding: 5px;
+  background: conic-gradient(from 0deg, #ffffff, #1a1a1a, #ff1f3d, #1a1a1a, #ffffff);
+  animation: gxSpin 10s linear infinite;
+  box-shadow: 0 0 40px rgba(255, 255, 255, .25), 0 0 80px rgba(255, 20, 50, .3);
+}
+.gx-photo-ring img {
+  width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+  background: #000; display: block;
+  filter: grayscale(1) contrast(1.1);
+  animation: gxSpinBack 10s linear infinite;
+}
+@keyframes gxSpin { to { transform: rotate(360deg); } }
+@keyframes gxSpinBack { to { transform: rotate(-360deg); } }
+
+/* Laptop kecil / tinggi layar pendek */
+@media (max-height: 760px) and (min-width: 1051px) {
+  .gx-hero { padding-top: 92px; padding-bottom: 30px; }
+  .gx-text h1 { font-size: clamp(34px, 4.2vw, 60px); }
+  .gx-photo-ring { width: 210px; height: 210px; }
+  .gx-logs { height: 64px; }
+}
+
+/* Tablet & HP */
+@media (max-width: 1050px) {
+  .gx-hero {
+    grid-template-columns: 1fr;
+     padding: 100px 6% 40px;
+    align-items: start;
+  }
+  .gx-card, .gx-photo { transform: none; }
+  .gx-photo { order: -1; }
+  .gx-photo-ring { width: 190px; height: 190px; }
+  .gx-text h1 { font-size: clamp(34px, 8vw, 56px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gx-photo-ring, .gx-photo-ring img, .gx-dot, .gx-text h1, .gx-badge-dot { animation: none; }
+}

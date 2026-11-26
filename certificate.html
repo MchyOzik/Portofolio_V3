@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate - Portfolio M. Choirul Rozikin</title>
+  <meta name="description" content="Certificates and achievements of M. Choirul Rozikin from Cisco Netacad, Fortinet, Aguna Course, ID-Networkers, Red Hat, JCC 2026, and more.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="certificate.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body class="page-cert">
+
+  <canvas id="galaxy"></canvas>
+  <div class="ct-nebula"></div>
+  <div class="ct-vignette"></div>
+
+  <header>
+    <nav>
+      <div class="brand">@Mchy<span>Ozik</span></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="experience.html">Skills</a></li>
+        <li><a href="work.html">My Work</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="games.html">Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ct-wrap">
+
+    <!-- Pencarian -->
+    <div class="ct-search">
+      <i class="fa-solid fa-magnifying-glass ct-search-icon"></i>
+      <input id="ctSearch" type="text" placeholder="Search certificate, issuer, or topic...  (press / to focus)" autocomplete="off" spellcheck="false">
+      <button id="ctClear" class="ct-clear" title="Clear" hidden><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Filter kategori -->
+    <div class="ct-filter" id="ctFilter"></div>
+
+    <div class="ct-count" id="ctCount"></div>
+
+    <!-- Daftar sertifikat (dibuat oleh certificate.js) -->
+    <div class="ct-grid" id="ctGrid"></div>
+
+    <div class="ct-empty" id="ctEmpty" hidden>
+      <i class="fa-solid fa-ghost"></i>
+      <p>No certificate found.</p>
+      <span>Try another keyword or choose a different category.</span>
+    </div>
+
+  </main>
+
+  <!-- Preview gambar -->
+  <div class="ct-lightbox" id="ctLightbox" hidden>
+    <button class="ct-lb-close" id="ctLbClose" title="Close"><i class="fa-solid fa-xmark"></i></button>
+    <figure>
+      <img id="ctLbImg" src="" alt="">
+      <figcaption id="ctLbCap"></figcaption>
+    </figure>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 MchyOzik — All Rights Reserved</p>
+      <div class="social-links">
+        <a href="https://wa.me/6285790201784" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/mchyozikk/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@MchyOzik17" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://github.com/MchyOzik/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="galaxy.js"></script>
+  <script src="certificate.js"></script>
+</body>
+</html>

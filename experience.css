@@ -1,0 +1,142 @@
+.page-skills { background: #000; position: relative; }
+
+#galaxy { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.sk-nebula {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 105%, rgba(150, 0, 20, .25), transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(255, 255, 255, .04), transparent 50%);
+}
+.sk-vignette {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, .85) 100%);
+}
+
+.sk-wrap {
+  position: relative; z-index: 1;
+  max-width: 1250px; margin: 0 auto;
+  padding: 28px 6% 60px; box-sizing: border-box; color: #bdbdbd;
+}
+
+/* Judul section: putih menyala */
+.sk-title {
+  text-align: center; margin: 0 0 22px;
+  font-family: "Cormorant SC", "Cinzel", Georgia, serif;
+  font-weight: 700; font-size: clamp(34px, 4.6vw, 58px); letter-spacing: 4px; color: #fff;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, .95),
+    0 0 18px rgba(255, 255, 255, .6),
+    0 0 40px rgba(255, 255, 255, .3),
+    0 0 80px rgba(255, 20, 50, .4);
+}
+
+/* Filter */
+.sk-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
+.sk-filter button {
+  cursor: pointer; font-family: "Courier New", monospace; font-size: 12px; letter-spacing: 2px;
+  padding: 9px 18px; border-radius: 999px; color: #cfcfcf;
+  background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .2);
+  transition: all .25s;
+}
+.sk-filter button:hover { border-color: #ff1f3d; color: #fff; }
+.sk-filter button.active {
+  background: #fff; color: #000; border-color: #fff;
+  box-shadow: 0 0 18px rgba(255, 255, 255, .45), 0 0 36px rgba(255, 20, 50, .3);
+}
+
+/* Grid skill */
+.sk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; align-items: start; }
+.sk-card {
+  background: rgba(8, 8, 8, .72);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 14px; padding: 20px 22px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .7), inset 0 0 0 1px rgba(255, 0, 40, .04);
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+.sk-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 31, 61, .55);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, .8), 0 0 26px rgba(255, 31, 61, .22);
+}
+.sk-card.hide { display: none; }
+
+.sk-label {
+  font-family: "Courier New", monospace; font-size: 12px; letter-spacing: 2px; color: #e53935;
+  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+  text-shadow: 0 0 8px rgba(255, 31, 61, .45);
+}
+.sk-card ul { list-style: none; margin: 0; padding: 0; }
+.sk-card li {
+  position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 14px; line-height: 1.55; color: #d4d4d4;
+}
+.sk-card li::before {
+  content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%;
+  background: #ff1f3d; box-shadow: 0 0 8px #ff1f3d;
+}
+
+/* Experience */
+.ex-section { margin-top: 70px; }
+.ex-list { display: flex; flex-direction: column; gap: 26px; }
+.ex-card {
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 26px; align-items: stretch;
+  background: rgba(8, 8, 8, .72);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 14px; padding: 24px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .7), inset 0 0 0 1px rgba(255, 0, 40, .04);
+}
+.ex-card:nth-child(even) { grid-template-columns: 1fr 1.05fr; }
+.ex-card:nth-child(even) .ex-map { order: -1; }
+
+.ex-company {
+  margin: 0 0 12px; color: #fff; font-size: 24px; letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, .6), 0 0 28px rgba(255, 20, 50, .3);
+}
+.ex-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.ex-chip {
+  font-size: 12px; padding: 6px 12px; border-radius: 999px; color: #ddd;
+  background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .2);
+}
+.ex-chip.red { border-color: rgba(255, 31, 61, .6); color: #ff6b7d; background: rgba(255, 31, 61, .08); }
+.ex-chip i { margin-right: 6px; }
+
+.ex-points { list-style: none; margin: 0; padding: 0; }
+.ex-points li {
+  position: relative; padding-left: 18px; margin-bottom: 10px; font-size: 14px; line-height: 1.65; color: #cfcfcf;
+}
+.ex-points li::before {
+  content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%;
+  background: #ff1f3d; box-shadow: 0 0 8px #ff1f3d;
+}
+
+/* Map hitam putih */
+.ex-map {
+  position: relative; border-radius: 10px; overflow: hidden; min-height: 300px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  box-shadow: 0 0 24px rgba(255, 255, 255, .08), 0 0 40px rgba(255, 20, 50, .18);
+}
+.ex-map iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+  filter: grayscale(1) invert(92%) contrast(.95) brightness(.9);
+}
+.ex-map-tag {
+  position: absolute; left: 12px; bottom: 12px; z-index: 2;
+  background: rgba(0, 0, 0, .88); border: 1px solid rgba(255, 255, 255, .18);
+  padding: 8px 12px; border-radius: 8px; font-size: 12px; color: #eee; font-family: "Courier New", monospace;
+}
+.ex-map-tag i { color: #ff2a2a; margin-right: 6px; }
+
+/* Animasi muncul (diatur reveal.js) */
+.reveal-ready { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.reveal-ready.in { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .sk-wrap { padding-top: 20px; }
+  .ex-card, .ex-card:nth-child(even) { grid-template-columns: 1fr; }
+  .ex-card:nth-child(even) .ex-map { order: 0; }
+  .ex-map { min-height: 260px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready { opacity: 1; transform: none; transition: none; }
+}

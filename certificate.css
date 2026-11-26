@@ -1,0 +1,199 @@
+.page-cert { background: #000; position: relative; }
+
+#galaxy { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.ct-nebula {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 105%, rgba(150, 0, 20, .25), transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(255, 255, 255, .04), transparent 50%);
+}
+.ct-vignette {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, .85) 100%);
+}
+
+.ct-wrap {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 1400px; margin: 0 auto;
+  padding: 28px 3% 60px; box-sizing: border-box; color: #bdbdbd;
+}
+
+/* ===== Pencarian ===== */
+.ct-search {
+  position: relative; max-width: 720px; margin: 0 auto 20px;
+}
+.ct-search input {
+  width: 100%; box-sizing: border-box;
+  padding: 15px 48px 15px 50px; border-radius: 14px;
+  font-family: "Courier New", monospace; font-size: 14px; letter-spacing: 1px; color: #fff;
+  background: rgba(8, 8, 8, .8); border: 1px solid rgba(255, 255, 255, .2);
+  outline: none; transition: border-color .25s, box-shadow .25s;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.ct-search input::placeholder { color: #6f6f6f; }
+.ct-search input:focus {
+  border-color: #ff1f3d;
+  box-shadow: 0 0 0 1px rgba(255, 31, 61, .4), 0 0 26px rgba(255, 31, 61, .35);
+}
+.ct-search-icon { position: absolute; left: 19px; top: 50%; transform: translateY(-50%); color: #ff2a2a; font-size: 15px; }
+.ct-clear {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
+  color: #ddd; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2);
+  transition: all .2s;
+}
+.ct-clear:hover { background: #ff1f3d; border-color: #ff1f3d; color: #fff; }
+
+/* ===== Filter ===== */
+.ct-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 18px; }
+.ct-filter button {
+  cursor: pointer; font-family: "Courier New", monospace; font-size: 12px; letter-spacing: 2px;
+  padding: 9px 18px; border-radius: 999px; color: #cfcfcf;
+  background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .2);
+  transition: all .25s;
+}
+.ct-filter button span { opacity: .6; margin-left: 4px; }
+.ct-filter button:hover { border-color: #ff1f3d; color: #fff; }
+.ct-filter button.active {
+  background: #fff; color: #000; border-color: #fff;
+  box-shadow: 0 0 18px rgba(255, 255, 255, .45), 0 0 36px rgba(255, 20, 50, .3);
+}
+
+.ct-count {
+  text-align: center; margin-bottom: 26px;
+  font-family: "Courier New", monospace; font-size: 12px; letter-spacing: 2px; color: #7a7a7a;
+}
+.ct-count b { color: #ff3b3b; }
+
+/* ===== Grid & kartu ===== */
+.ct-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 24px; align-items: stretch; }
+
+.ct-card {
+  display: flex; flex-direction: column;
+  background: rgba(8, 8, 8, .72);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 14px; overflow: hidden;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .7), inset 0 0 0 1px rgba(255, 0, 40, .04);
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+  animation: ctIn .55s ease both;
+}
+.ct-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 31, 61, .6);
+  box-shadow: 0 16px 46px rgba(0, 0, 0, .85), 0 0 28px rgba(255, 31, 61, .25);
+}
+@keyframes ctIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+/* Gambar sertifikat */
+.ct-img {
+  position: relative; aspect-ratio: 4 / 3; overflow: hidden; cursor: zoom-in;
+  background: #0b0b0b; border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.ct-img img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(.65) contrast(1.05);
+  transition: filter .4s, transform .5s;
+}
+.ct-card:hover .ct-img img { filter: grayscale(0); transform: scale(1.06); }
+
+/* Placeholder kalau gambar belum ada */
+.ct-ph {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  color: #444; font-family: "Courier New", monospace; font-size: 11px; letter-spacing: 1px; text-align: center; padding: 14px;
+  background: repeating-linear-gradient(45deg, #0b0b0b, #0b0b0b 10px, #101010 10px, #101010 20px);
+}
+.ct-ph i { font-size: 38px; color: #ff1f3d; opacity: .55; }
+.ct-img.noimg { cursor: default; }
+
+.ct-issuer {
+  position: absolute; left: 12px; top: 12px; z-index: 2;
+  font-family: "Courier New", monospace; font-size: 11px; letter-spacing: 1.5px; color: #fff;
+  padding: 6px 11px; border-radius: 999px;
+  background: rgba(0, 0, 0, .82); border: 1px solid rgba(255, 255, 255, .25);
+}
+.ct-badge {
+  position: absolute; right: 12px; top: 12px; z-index: 2;
+  font-family: "Courier New", monospace; font-size: 11px; letter-spacing: 1.5px; color: #fff;
+  padding: 6px 11px; border-radius: 999px;
+  background: #ff1f3d; box-shadow: 0 0 16px rgba(255, 31, 61, .8);
+}
+.ct-zoom {
+  position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, .55); color: #fff; font-size: 26px;
+  opacity: 0; transition: opacity .3s;
+}
+.ct-card:hover .ct-img:not(.noimg) .ct-zoom { opacity: 1; }
+
+/* Isi kartu */
+.ct-body { display: flex; flex-direction: column; flex: 1; padding: 18px 20px 20px; }
+.ct-cat {
+  font-family: "Courier New", monospace; font-size: 11px; letter-spacing: 2px; color: #e53935;
+  display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(255, 31, 61, .45);
+}
+.ct-body h3 {
+  margin: 0 0 6px; color: #fff; font-size: 18px; line-height: 1.35; letter-spacing: .5px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, .45);
+}
+.ct-by { margin: 0 0 12px; font-size: 13px; color: #8a8a8a; }
+.ct-by b { color: #cfcfcf; font-weight: 600; }
+.ct-desc { margin: 0 0 14px; font-size: 14px; line-height: 1.7; color: #cfcfcf; }
+
+.ct-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+.ct-tags span {
+  font-size: 11px; padding: 5px 10px; border-radius: 999px; color: #ddd;
+  background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .18);
+  transition: border-color .2s, box-shadow .2s;
+}
+.ct-tags span:hover { border-color: #ff2a2a; box-shadow: 0 0 10px rgba(255, 31, 61, .5); }
+
+.ct-btn {
+  margin-top: auto; align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 13px;
+  background: #fff; color: #000;
+  box-shadow: 0 0 18px rgba(255, 255, 255, .35), 0 0 36px rgba(255, 20, 50, .2);
+  transition: transform .2s, box-shadow .2s;
+}
+.ct-btn:hover { transform: translateY(-2px); box-shadow: 0 0 26px rgba(255, 255, 255, .65), 0 0 56px rgba(255, 20, 50, .4); }
+.ct-btn[href="#"] {
+  background: rgba(255, 255, 255, .06); color: #777; box-shadow: none; cursor: not-allowed; pointer-events: none;
+  border: 1px dashed rgba(255, 255, 255, .2);
+}
+
+/* Kosong */
+.ct-empty { text-align: center; padding: 50px 20px; color: #888; }
+.ct-empty i { font-size: 46px; color: #ff1f3d; opacity: .7; margin-bottom: 14px; }
+.ct-empty p { margin: 0 0 6px; color: #fff; font-size: 20px; }
+.ct-empty span { font-size: 13px; }
+
+/* Lightbox */
+.ct-lightbox {
+  position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, .92); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  animation: ctFade .25s ease;
+}
+.ct-lightbox[hidden] { display: none; }
+@keyframes ctFade { from { opacity: 0; } to { opacity: 1; } }
+.ct-lightbox figure { margin: 0; max-width: 92vw; text-align: center; }
+.ct-lightbox img {
+  max-width: 92vw; max-height: 82vh; border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  box-shadow: 0 0 40px rgba(255, 255, 255, .15), 0 0 90px rgba(255, 20, 50, .35);
+}
+.ct-lightbox figcaption { margin-top: 14px; font-family: "Courier New", monospace; font-size: 13px; letter-spacing: 1px; color: #ddd; }
+.ct-lb-close {
+  position: absolute; top: 18px; right: 22px; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  font-size: 18px; color: #fff; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .3);
+  transition: all .2s;
+}
+.ct-lb-close:hover { background: #ff1f3d; border-color: #ff1f3d; box-shadow: 0 0 18px rgba(255, 31, 61, .8); }
+
+@media (max-width: 700px) {
+  .ct-wrap { padding-top: 20px; }
+  .ct-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ct-card, .ct-lightbox { animation: none; }
+}

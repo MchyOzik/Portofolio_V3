@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Portfolio M. Choirul Rozikin</title>
+  <meta name="description" content="Portfolio of M. Choirul Rozikin — Network & System Administrator, Cloud Computing and Cyber Security enthusiast, TKJ student at SMKN 1 Nglegok.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body class="page-home">
+
+  <canvas id="galaxy" data-shooting="true"></canvas>
+  <div class="gx-nebula"></div>
+  <div class="gx-vignette"></div>
+
+  <header>
+    <nav>
+      <div class="brand">@Mchy<span>Ozik</span></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="experience.html">Skills</a></li>
+        <li><a href="work.html">My Work</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="games.html">Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="gx-hero">
+
+    <aside class="gx-card">
+      <div class="gx-title"><span class="gx-dot"></span><span>SYSTEM_PROFILE.sys</span></div>
+
+      <h3>[ IDENTITY ]</h3>
+      <p><strong>NAME:</strong> M. Choirul Rozikin</p>
+      <p><strong>ALIAS:</strong> MchyOzik</p>
+      <p><strong>ROLE:</strong> IT Network System Administrator, Cloud Computing &amp; Cyber Security</p>
+      <p><strong>NODE:</strong> SMKN 1 Nglegok (TKJ)</p>
+
+      <h3>[ ABOUT_ME.txt ]</h3>
+      <p>A technology enthusiast in Computer and Network Engineering (TKJ), focused on network administration, server management, cloud computing, and cyber security.</p>
+
+      <h3>[ TELEMETRY ]</h3>
+      <div>
+        <div class="gx-bar-label"><span>CPU Load</span><span id="v-cpu">42%</span></div>
+        <div class="gx-bar-bg"><div class="gx-bar-fill" id="b-cpu"></div></div>
+        <div class="gx-bar-label"><span>Memory Usage</span><span id="v-mem">67%</span></div>
+        <div class="gx-bar-bg"><div class="gx-bar-fill" id="b-mem"></div></div>
+        <div class="gx-bar-label"><span>Threat Level</span><span class="gx-red">MINIMAL</span></div>
+        <div class="gx-bar-bg"><div class="gx-bar-fill gx-bar-red" style="width:8%"></div></div>
+      </div>
+
+      <div class="gx-logs" id="sidebar-logs">
+        <div>&gt; INITIALIZING MONITOR... [OK]</div>
+        <div>&gt; WAITING FOR USER INPUT...</div>
+      </div>
+    </aside>
+
+    <section class="gx-text">
+      <div class="gx-badges">
+        <span class="gx-badge">NODE: SALAM_ID // SMKAKENGO</span>
+        <span class="gx-badge"><span class="gx-badge-dot"></span> SECURE_CON</span>
+      </div>
+
+      <h1>M. Choirul Rozikin</h1>
+      <p class="gx-role">IT Network System Administrator &bull; Cloud Computing &bull; Cyber Security</p>
+
+      <h2>I SEE YOU LOOKING.</h2>
+      <div class="gx-type"><span id="typewriter"></span><span class="gx-cursor"></span></div>
+
+      <div class="gx-actions">
+        <a href="MchyOzik CV.pdf" class="gx-btn primary" download="My-CV.pdf"><i class="fa-solid fa-download"></i> EXTRACT_CV.pdf</a>
+        <a href="about.html" class="gx-btn ghost">About Me <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="gx-sign">Sheng' M. Choirul Rozikin</div>
+    </section>
+
+    <div class="gx-photo">
+      <div class="gx-photo-ring">
+        <img src="img/Profil.jpeg" alt="Photo of M. Choirul Rozikin">
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 MchyOzik — All Rights Reserved</p>
+      <div class="social-links">
+        <a href="https://wa.me/6285790201784" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/mchyozikk/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@MchyOzik17" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://github.com/MchyOzik/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="galaxy.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

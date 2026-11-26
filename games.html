@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games - Portfolio M. Choirul Rozikin</title>
+  <meta name="description" content="Sword Storm: control 1000 swords with your hands using your webcam and AI hand tracking.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="games.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body class="page-games">
+
+  <div class="gm-nebula"></div>
+  <div class="gm-vignette"></div>
+
+  <header>
+    <nav>
+      <div class="brand">@Mchy<span>Ozik</span></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="experience.html">Skills</a></li>
+        <li><a href="work.html">My Work</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="games.html" class="active">Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="gm-wrap">
+    <h1 class="gm-title">Sword Storm</h1>
+
+    <section class="gm-layout">
+
+      <!-- PANGGUNG KAMERA -->
+      <div class="gm-stage-box">
+        <div class="gm-stage" id="gmStage">
+          <video id="gmVideo" playsinline muted></video>
+          <canvas id="gmFx"></canvas>
+
+          <div class="gm-hud-l" id="gmHudL"></div>
+          <div class="gm-hud-r" id="gmHudR"></div>
+          <div class="gm-hint" id="gmHint" hidden><i class="fa-solid fa-hand"></i> Show your hand to the camera</div>
+
+          <div class="gm-overlay" id="gmOverlay">
+            <div class="gm-card">
+              <div class="gm-card-icon"><i class="fa-solid fa-hand"></i></div>
+              <h2>Command 1000 swords</h2>
+              <p>Turn on your webcam and shape a storm of swords with your bare hands. Try different poses, then use both hands to combine them, even into a blooming lotus.</p>
+              <button class="gm-btn primary" id="gmStart"><i class="fa-solid fa-video"></i> Start Camera</button>
+              <div class="gm-msg" id="gmMsg"></div>
+              <div class="gm-note"><i class="fa-solid fa-lock"></i> Your camera is processed in your browser only. Nothing is uploaded or saved.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL SAMPING -->
+      <aside class="gm-panel">
+
+        <div class="gm-box">
+          <div class="gm-label"><i class="fa-solid fa-sliders"></i> CONTROLS.cfg</div>
+
+          <label class="gm-row">
+            <span>Swords <b id="gmCountVal">1000</b></span>
+            <input type="range" id="gmCount" min="100" max="2000" step="50" value="1000">
+          </label>
+
+          <label class="gm-row">
+            <span>Sword size <b id="gmSizeVal">1.0x</b></span>
+            <input type="range" id="gmSize" min="0.5" max="2" step="0.1" value="1">
+          </label>
+
+          <label class="gm-row">
+            <span>Sword speed <b id="gmSpeedVal">1.0x</b></span>
+            <input type="range" id="gmSpeed" min="0.3" max="3" step="0.1" value="1">
+          </label>
+
+          <div class="gm-row">
+            <span>Style</span>
+            <div class="gm-chips" id="gmStyle">
+              <button data-style="white">White</button>
+              <button data-style="blue">Blue</button>
+              <button data-style="red">Red</button>
+              <button data-style="mix" class="active">Mix</button>
+            </div>
+          </div>
+
+          <label class="gm-switch"><input type="checkbox" id="gmFeed" checked><span>Show camera feed</span></label>
+          <label class="gm-switch"><input type="checkbox" id="gmSkel" checked><span>Show hand skeleton</span></label>
+
+          <div class="gm-actions">
+            <button class="gm-btn ghost" id="gmFull"><i class="fa-solid fa-expand"></i> Fullscreen</button>
+            <button class="gm-btn ghost" id="gmShot"><i class="fa-solid fa-camera"></i> Snapshot</button>
+            <button class="gm-btn ghost" id="gmStop" disabled><i class="fa-solid fa-video-slash"></i> Stop</button>
+          </div>
+        </div>
+
+        <div class="gm-box">
+          <div class="gm-label"><i class="fa-solid fa-hand-sparkles"></i> ONE_HAND.log</div>
+          <ul class="gm-guide">
+            <li><i class="fa-solid fa-hand"></i><div><b>Open palm</b><span>Spiral galaxy</span></div></li>
+            <li><i class="fa-solid fa-hand-fist"></i><div><b>Fist</b><span>Six-ring shield</span></div></li>
+            <li><i class="fa-solid fa-hand-point-up"></i><div><b>1 finger (thumb tucked)</b><span>Still square that turns with your hand</span></div></li>
+            <li><i class="fa-solid fa-dove"></i><div><b>2 fingers together</b><span>Flapping sword wings</span></div></li>
+            <li><i class="fa-solid fa-hand-peace"></i><div><b>V sign (fingers apart)</b><span>Blade fan</span></div></li>
+            <li><i class="fa-solid fa-shapes"></i><div><b>3 fingers</b><span>Spinning triangle</span></div></li>
+            <li><i class="fa-solid fa-bolt"></i><div><b>Rock sign (index + pinky, thumb tucked)</b><span>Lightning bolt</span></div></li>
+            <li><i class="fa-solid fa-spider"></i><div><b>Spider sign (thumb + index + pinky)</b><span>Spider web</span></div></li>
+            <li><i class="fa-solid fa-khanda"></i><div><b>Pinky only (thumb tucked)</b><span>One giant great sword</span></div></li>
+            <li><i class="fa-solid fa-water"></i><div><b>Shaka (thumb + pinky)</b><span>Ocean wave</span></div></li>
+            <li><i class="fa-solid fa-thumbs-up"></i><div><b>Thumbs up</b><span>Spinning star</span></div></li>
+            <li><i class="fa-solid fa-circle-notch"></i><div><b>OK sign</b><span>Triple ring</span></div></li>
+            <li><i class="fa-solid fa-hand-holding-heart"></i><div><b>Half heart</b><span>Thumb out sideways, index curved, other fingers folded</span></div></li>
+            <li><i class="fa-solid fa-burst"></i><div><b>Fist, then open fast</b><span>Burst! Swords explode outward</span></div></li>
+          </ul>
+        </div>
+
+        <div class="gm-box">
+          <div class="gm-label"><i class="fa-solid fa-hands"></i> TWO_HANDS.log</div>
+          <p class="gm-tip">Make the <b>same pose</b> with both hands to combine them. The swords are shared between your hands, never duplicated.</p>
+          <ul class="gm-guide">
+            <li><i class="fa-solid fa-spa"></i><div><b>Open + Open, close together</b><span>Blooming lotus. The petals open one layer at a time</span></div></li>
+            <li><i class="fa-solid fa-infinity"></i><div><b>Open + Open, far apart</b><span>Infinity loop</span></div></li>
+            <li><i class="fa-solid fa-circle-nodes"></i><div><b>Fist + Fist</b><span>Binary star with an orbit ring</span></div></li>
+            <li><i class="fa-solid fa-border-all"></i><div><b>1 finger + 1 finger</b><span>Sword wall between your fingers</span></div></li>
+            <li><i class="fa-solid fa-dove"></i><div><b>2 fingers + 2 fingers</b><span>Great wings, your hands are the wing tips</span></div></li>
+            <li><i class="fa-solid fa-sun"></i><div><b>V + V</b><span>Sunburst</span></div></li>
+            <li><i class="fa-solid fa-star-of-david"></i><div><b>3 fingers + 3 fingers</b><span>Hexagram with a seal circle</span></div></li>
+            <li><i class="fa-solid fa-bolt"></i><div><b>Rock + Rock</b><span>Lightning link between your hands</span></div></li>
+            <li><i class="fa-solid fa-spider"></i><div><b>Spider + Spider</b><span>Giant web between your hands</span></div></li>
+            <li><i class="fa-solid fa-khanda"></i><div><b>Pinky + Pinky</b><span>Crossed swords</span></div></li>
+            <li><i class="fa-solid fa-water"></i><div><b>Shaka + Shaka</b><span>One ocean wave across both hands</span></div></li>
+            <li><i class="fa-solid fa-star"></i><div><b>Thumbs up + Thumbs up</b><span>Pentagram with a seal circle</span></div></li>
+            <li><i class="fa-solid fa-link"></i><div><b>OK + OK</b><span>Two interlocked rings</span></div></li>
+            <li><i class="fa-solid fa-heart"></i><div><b>Half heart + Half heart</b><span>Bring them close for a full heart</span></div></li>
+          </ul>
+        </div>
+
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 MchyOzik — All Rights Reserved</p>
+      <div class="social-links">
+        <a href="https://wa.me/6285790201784" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/mchyozikk/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@MchyOzik17" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://github.com/MchyOzik/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI hand tracking (MediaPipe Hands), versi dikunci -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js" crossorigin="anonymous"></script>
+  <script src="games.js"></script>
+</body>
+</html>
