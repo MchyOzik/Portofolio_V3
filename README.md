@@ -1,5 +1,5 @@
 cd /docker/web1
-git clone https://github.com/MchyOzik/Portofolio_V2
+git clone https://mchyozik.github.io/Portofolio_V3/
 
 Dockerfile
 Search httpd
